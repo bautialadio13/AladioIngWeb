@@ -61,7 +61,7 @@ export default function Footer() {
       <a
         href="https://wa.me/543434629959"
         target="_blank"
-        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 rounded-full p-3 shadow-lg z-50"
+        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 rounded-full p-3 shadow-lg z-50 transform transition-transform hover:scale-105"
       >
         <img src="/images/whatsapp-icon.png" alt="WhatsApp" className="h-10 w-10" />
       </a>

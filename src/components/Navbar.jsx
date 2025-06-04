@@ -1,6 +1,16 @@
-import { Menu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  const links = [
+    { href: '#services', label: 'Servicios' },
+    { href: '#projects', label: 'Proyectos' },
+    { href: '#about', label: 'Nosotros' },
+    { href: '#contact', label: 'Contacto' },
+  ];
+
   return (
     <nav className="fixed w-full backdrop-blur bg-white/70 shadow-sm z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
@@ -13,13 +23,33 @@ export default function Navbar() {
           />
         </a>
         <ul className="hidden md:flex gap-6 text-sm font-medium">
-          <li><a href="#services" className="hover:text-secondary">Servicios</a></li>
-          <li><a href="#projects" className="hover:text-secondary">Proyectos</a></li>
-          <li><a href="#about"    className="hover:text-secondary">Nosotros</a></li>
-          <li><a href="#contact"  className="hover:text-secondary">Contacto</a></li>
+          {links.map((l) => (
+            <li key={l.href}>
+              <a href={l.href} className="hover:text-secondary">
+                {l.label}
+              </a>
+            </li>
+          ))}
         </ul>
-        <button className="md:hidden text-primary"><Menu /></button>
+        <button onClick={() => setOpen(!open)} className="md:hidden text-primary">
+          {open ? <X /> : <Menu />}
+        </button>
       </div>
+      {open && (
+        <ul className="md:hidden bg-white shadow-inner text-center space-y-2 py-4">
+          {links.map((l) => (
+            <li key={l.href}>
+              <a
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="block py-2 hover:text-secondary"
+              >
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
     </nav>
   );
 }

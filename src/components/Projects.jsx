@@ -124,7 +124,7 @@ export default function Projects() {
             <figure
               key={i}
               onClick={() => open(p)}
-              className="rounded-2xl overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-all"
+              className="rounded-2xl overflow-hidden shadow-lg cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-transform"
             >
               <img src={p.images[0]} alt={p.title} className="w-full h-60 object-cover" />
               <figcaption className="py-3 bg-white text-base font-semibold text-primary">
