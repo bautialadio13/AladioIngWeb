@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 body {
-  @apply font-[Poppins] bg-green-500 text-accent antialiased scroll-smooth;
+  @apply font-[Poppins] bg-white text-accent antialiased scroll-smooth;
 }
 
