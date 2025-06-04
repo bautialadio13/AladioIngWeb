@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-secondary/40 to-white">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 via-secondary/20 to-white">
       <div className="text-center space-y-6 p-6">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -20,7 +20,7 @@ export default function Hero() {
         <motion.a
           whileHover={{ scale: 1.05 }}
           href="#contact"
-          className="inline-block bg-primary text-white px-6 py-3 rounded-full shadow-lg"
+          className="inline-block bg-primary hover:bg-secondary text-white px-6 py-3 rounded-full shadow-lg"
         >
           Contactarse
         </motion.a>
